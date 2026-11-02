@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Gạo Hiếu Út",
   description:
     "Chuyên cung cấp các loại gạo, nếp, tấm và bánh tráng tại Tuy Hòa, Đắk Lắk.",
-  url: "https://gaohieuut.com",
+  url: "https://gaohieuut.vercel.app",
 
   phones: ["0837149221", "0935354503"],
 
