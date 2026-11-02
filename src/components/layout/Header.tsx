@@ -1,6 +1,8 @@
+
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -22,16 +24,24 @@ export default function Header() {
   return (
     <header className="relative z-50 w-full border-b border-stone-100 bg-white">
       <div className="container-custom">
-        <div className="flex h-[72px] items-center justify-between gap-4 lg:h-[84px]">
+        <div className="flex h-[72px] items-center justify-between gap-3 lg:h-[84px]">
 
           {/* LOGO */}
           <Link
             href="/"
             onClick={closeMenu}
-            className="flex min-w-0 items-center gap-3"
+            className="flex min-w-0 items-center gap-2 sm:gap-3"
+            aria-label="Đại lý gạo - Bánh tráng Hiếu Út"
           >
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#8B5E2B] text-xl font-bold text-white">
-              D
+            <div className="relative h-12 w-12 shrink-0 sm:h-14 sm:w-14">
+              <Image
+                src="/images/logo-hieu-ut.png"
+                alt="Logo Hiếu Út"
+                fill
+                priority
+                sizes="56px"
+                className="object-contain"
+              />
             </div>
 
             <div className="min-w-0">
@@ -45,7 +55,7 @@ export default function Header() {
           </Link>
 
           {/* DESKTOP MENU */}
-          <nav className="hidden items-center gap-5 xl:gap-7 lg:flex">
+          <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
